@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - FitZone</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./images/fav-icon.png">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- AOS CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- About CSS -->
+    <link rel="stylesheet" href="./css/about.css">
+</head>
+
+<body>
+
+    <!-- ════════════════════════════════════════ NAVBAR ═══ -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="./index.html"><span style="color:#e94560;">Fit</span>-Zone</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./features.html">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./accessories.html">Accessories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex gap-3 align-items-center">
+                    <!-- Cart Icon -->
+                    <div class="cart-icon-wrap text-white" onclick="toggleCart()">
+                        <i class="fas fa-shopping-bag fs-5"></i>
+                        <div class="cart-badge" id="cartBadge">0</div>
+                    </div>
+                    <a href="./login.html" title="Login / Sign Up"
+                        style="color:#fff; font-size:1.4rem; line-height:1; transition: color 0.2s;"
+                        onmouseover="this.style.color='#e94560'" onmouseout="this.style.color='#fff'">
+                        <i class="fas fa-user-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ════════════════════════════════════════ CART DRAWER ═══ -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <h5><i class="fas fa-shopping-bag me-2" style="color:var(--accent);"></i> Your Cart <span id="cartCount"
+                    style="color:#999;font-size:0.85rem;font-weight:500;"></span></h5>
+            <button class="cart-close" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart" id="emptyCart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <a href="./shop.html" class="btn rounded-pill px-4 fw-600"
+                    style="background:var(--accent);color:#fff;border:none;" onclick="toggleCart()">Start Shopping</a>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total-row">
+                <span style="color:#777;">Subtotal</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <div class="cart-total-row">
+                <strong>Total</strong>
+                <span id="cartGrandTotal">$0.00</span>
+            </div>
+            <button class="btn-checkout-cart" onclick="window.location.href='./checkout.html'">
+                <i class="fas fa-lock me-2"></i>Proceed to Checkout
+            </button>
+            <a href="./shop.html" class="d-block text-center mt-3 text-muted small" onclick="toggleCart()">Continue Shopping
+                →</a>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ HERO ═══ -->
+    <section class="about-hero">
+        <div class="container">
+            <nav aria-label="breadcrumb" class="mb-3">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                    <li class="breadcrumb-item active">About Us</li>
+                </ol>
+            </nav>
+            <h1 data-aos="fade-up">Dressing the World<br><span>One Outfit at a Time</span></h1>
+            <p class="mt-3" data-aos="fade-up" data-aos-delay="100">
+                Born in 2020, FitZone is a premium fashion e-store dedicated to making high-quality clothing, footwear,
+                and accessories accessible to everyone — without the premium price tag.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ OUR STORY ═══ -->
+    <section class="story-section">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <p class="section-label">Our Story</p>
+                    <h2 class="section-title mb-4">From a Small Idea<br><span style="color:var(--accent);">to a Global
+                            Brand</span></h2>
+                    <p class="story-text">
+                        FitZone started with a simple belief: great fashion shouldn't cost a fortune. In 2020, our
+                        founder Usama Ahmed launched FitZone from a small studio in Karachi with a curated collection
+                        of 12 products and a dream to redefine affordable luxury.
+                    </p>
+                    <p class="story-text mt-3">
+                        Within our first year, we served over 5,000 customers across Pakistan. By 2022, we had expanded
+                        internationally — shipping to the USA, UK, UAE, and beyond. Today, FitZone carries over 1,200
+                        products and has a community of more than 50,000 loyal shoppers.
+                    </p>
+                    <div class="quote-block">
+                        <p>"We didn't just want to sell clothes — we wanted people to feel confident, stylish, and
+                            empowered every single day."</p>
+                        <span>— Usama Ahmed, Founder & CEO</span>
+                    </div>
+                    <p class="story-text">
+                        Every product in our catalog is hand-picked for quality, fit, and style. We work directly with
+                        trusted manufacturers and use eco-friendly packaging — because fashion should feel good for you
+                        and the planet.
+                    </p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="story-img">
+                        <img src="./images/about-pg-imgs/about-para-img.jpeg" alt="Our Story"
+                            onerror="this.src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&q=80'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission row -->
+            <div class="row g-5 align-items-center mt-4">
+                <div class="col-lg-6 order-lg-2" data-aos="fade-left">
+                    <p class="section-label">Our Mission</p>
+                    <h2 class="section-title mb-4">Style for <span style="color:var(--accent);">Everyone</span></h2>
+                    <p class="story-text">
+                        Our mission is simple: to make premium fashion accessible. We believe that the way you dress
+                        affects the way you feel — and we're committed to making sure everyone can dress their best,
+                        regardless of budget.
+                    </p>
+                    <p class="story-text mt-3">
+                        We stay ahead of global trends so you don't have to. Our buyers travel to fashion weeks and
+                        collaborate with emerging designers to bring you fresh collections every week. From classic
+                        essentials to statement pieces, FitZone is your style partner for every occasion.
+                    </p>
+                    <div class="d-flex gap-3 mt-4">
+                        <div class="text-center">
+                            <div
+                                style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;color:var(--accent);">
+                                2020</div>
+                            <small class="text-muted">Founded</small>
+                        </div>
+                        <div class="vr mx-2"></div>
+                        <div class="text-center">
+                            <div
+                                style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;color:var(--accent);">
+                                30+</div>
+                            <small class="text-muted">Countries</small>
+                        </div>
+                        <div class="vr mx-2"></div>
+                        <div class="text-center">
+                            <div
+                                style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;color:var(--accent);">
+                                50K+</div>
+                            <small class="text-muted">Customers</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                    <div class="story-img">
+                        <img src="./images/about-pg-imgs/our-story-para-img.jpeg" alt="Our Mission"
+                            onerror="this.src='https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=700&q=80'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ TIMELINE ═══ -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label" data-aos="fade-up">How We Got Here</p>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Our <span
+                        style="color:var(--accent);">Journey</span></h2>
+            </div>
+            <div class="timeline" data-aos="fade-up" data-aos-delay="120">
+                <div class="tl-item left">
+                    <div class="tl-dot"></div>
+                    <div class="tl-year">2020</div>
+                    <h6>The Beginning</h6>
+                    <p>Usama founded FitZone from a studio in Karachi with a collection of 12 products and a vision to
+                        democratize fashion.</p>
+                </div>
+                <div class="tl-item right">
+                    <div class="tl-dot"></div>
+                    <div class="tl-year">2021</div>
+                    <h6>First 5,000 Customers</h6>
+                    <p>Rapid growth within Pakistan. Launched our first seasonal sale and surpassed 5,000 happy
+                        customers in under a year.</p>
+                </div>
+                <div class="tl-item left">
+                    <div class="tl-dot"></div>
+                    <div class="tl-year">2022</div>
+                    <h6>Going International</h6>
+                    <p>Expanded shipping to the USA, UK, UAE, and Australia. Introduced our Loyalty Rewards program to
+                        give back to customers.</p>
+                </div>
+                <div class="tl-item right">
+                    <div class="tl-dot"></div>
+                    <div class="tl-year">2023</div>
+                    <h6>1,000+ Products</h6>
+                    <p>Crossed the 1,000 product milestone. Launched our Accessories and Watches categories. Team grew
+                        to 25 people.</p>
+                </div>
+                <div class="tl-item left">
+                    <div class="tl-dot"></div>
+                    <div class="tl-year">2024</div>
+                    <h6>Eco-Friendly Initiative</h6>
+                    <p>Moved to 100% recyclable packaging. Partnered with sustainable brands. Hit 50,000 lifetime
+                        customers worldwide.</p>
+                </div>
+                <div class="tl-item right">
+                    <div class="tl-dot"></div>
+                    <div class="tl-year">2025</div>
+                    <h6>The Future</h6>
+                    <p>Launching our mobile app, FitZone Membership tiers, and curated personal styling service. The
+                        best is yet to come.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ VALUES ═══ -->
+    <section class="values-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label" data-aos="fade-up">What Drives Us</p>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Our Core <span
+                        style="color:var(--accent);">Values</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="value-card">
+                        <div class="val-icon" style="background:rgba(233,69,96,0.1);">
+                            <i class="fas fa-medal" style="color:var(--accent);font-size:1.6rem;"></i>
+                        </div>
+                        <h5>Quality First</h5>
+                        <p>Every item passes our strict quality check before reaching your door. We never compromise on
+                            materials, stitching, or finish.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+                    <div class="value-card">
+                        <div class="val-icon" style="background:rgba(15,52,96,0.1);">
+                            <i class="fas fa-heart" style="color:#0f3460;font-size:1.6rem;"></i>
+                        </div>
+                        <h5>Customer Love</h5>
+                        <p>Our 98% satisfaction rate isn't luck — it's the result of genuinely caring about every
+                            customer's experience, before and after purchase.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+                    <div class="value-card">
+                        <div class="val-icon" style="background:rgba(39,174,96,0.1);">
+                            <i class="fas fa-leaf" style="color:#27ae60;font-size:1.6rem;"></i>
+                        </div>
+                        <h5>Sustainability</h5>
+                        <p>Fashion and responsibility go hand in hand. We use eco-friendly packaging and partner with
+                            ethical manufacturers globally.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+                    <div class="value-card">
+                        <div class="val-icon" style="background:rgba(245,166,35,0.12);">
+                            <i class="fas fa-bolt" style="color:var(--gold);font-size:1.6rem;"></i>
+                        </div>
+                        <h5>Innovation</h5>
+                        <p>We embrace technology and trends to stay ahead — from AI-powered style recommendations to
+                            seamless mobile shopping.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ TEAM ═══ -->
+    <section class="team-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label" data-aos="fade-up">The People Behind FitZone</p>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Meet the <span
+                        style="color:var(--accent);">Team</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="team-card">
+                        <div class="team-img">
+                            <img src="https://i.pravatar.cc/400?img=11" alt="Usama Ahmed">
+                            <div class="team-overlay">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="mailto:usama@fitzone.com"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h6>Usama Ahmed</h6>
+                            <div class="team-role">Founder & CEO</div>
+                            <p>Visionary behind FitZone. Passionate about fashion, tech, and building a brand that
+                                empowers people to express themselves.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+                    <div class="team-card">
+                        <div class="team-img">
+                            <img src="https://i.pravatar.cc/400?img=47" alt="Sara Malik">
+                            <div class="team-overlay">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h6>Sara Malik</h6>
+                            <div class="team-role">Head of Design</div>
+                            <p>Award-winning designer with 8 years of experience. Curates every collection and ensures
+                                FitZone's aesthetic stays fresh and relevant.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+                    <div class="team-card">
+                        <div class="team-img">
+                            <img src="https://i.pravatar.cc/400?img=33" alt="Ali Khan">
+                            <div class="team-overlay">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h6>Ali Khan</h6>
+                            <div class="team-role">Operations Director</div>
+                            <p>Keeps the entire supply chain running like clockwork. From sourcing to same-day dispatch,
+                                Ali ensures every order is perfect.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+                    <div class="team-card">
+                        <div class="team-img">
+                            <img src="https://i.pravatar.cc/400?img=20" alt="Zara Ahmed">
+                            <div class="team-overlay">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h6>Zara Ahmed</h6>
+                            <div class="team-role">Customer Experience Lead</div>
+                            <p>The reason our customer satisfaction is at 98%. Zara leads our support team with empathy,
+                                speed, and an obsession with delight.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ STATS ═══ -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-6 col-md-3" data-aos="fade-up">
+                    <div class="stat-card">
+                        <div class="stat-num">50K+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="80">
+                    <div class="stat-card">
+                        <div class="stat-num">1,200+</div>
+                        <div class="stat-label">Products</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="160">
+                    <div class="stat-card">
+                        <div class="stat-num">30+</div>
+                        <div class="stat-label">Countries Shipped</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="240">
+                    <div class="stat-card">
+                        <div class="stat-num">98%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ CTA ═══ -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Ready to Join the FitZone Family?</h2>
+            <p data-aos="fade-up" data-aos-delay="80">Explore our latest collections and find your perfect style today.
+            </p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap" data-aos="fade-up" data-aos-delay="160">
+                <a href="./shop.html" class="btn btn-cta"><i class="fas fa-shopping-bag me-2"></i>Shop Now</a>
+                <a href="./contact.html" class="btn btn-outline-light rounded-pill px-4 fw-600">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ FOOTER ═══ -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3"><span style="color:#e94560;">Fit</span>-Zone</h5>
+                    <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;max-width:280px;">Your source for
+                        high-quality premium
+                        products. Fashion for everyone, everywhere.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-white-50 fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white-50 fs-5"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923302479878" class="text-white-50 fs-5"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="text-white-50 fs-5"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Shop</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a href="./shop.html" class="text-white-50 text-decoration-none small">All
+                                Products</a>
+                        </li>
+                        <li class="mb-1"><a href="./accessories.html"
+                                class="text-white-50 text-decoration-none small">Accessories</a></li>
+                        <li class="mb-1"><a href="./features.html"
+                                class="text-white-50 text-decoration-none small">Features</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Company</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a href="./about.html" class="text-white-50 text-decoration-none small">About
+                                Us</a></li>
+                        <li class="mb-1"><a href="./contact.html"
+                                class="text-white-50 text-decoration-none small">Contact</a></li>
+                        <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none small">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold mb-3">Quick Subscribe</h6>
+                    <p class="text-white-50 small mb-3">Get deals before they sell out.</p>
+                    <div class="d-flex gap-2">
+                        <input type="email" class="form-control rounded-pill" placeholder="Your email"
+                            style="font-size:0.85rem;">
+                        <button class="btn rounded-pill px-3"
+                            style="background:var(--accent);color:#fff;border:none;white-space:nowrap;font-weight:600;"><i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary mt-4">
+            <p class="text-center text-white-50 small mb-0">© 2025 FitZone. All rights reserved. Made with <i
+                    class="fas fa-heart" style="color:var(--accent);"></i> in Karachi.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/923302479878" class="position-fixed bottom-0 end-0 m-4" style="z-index:1000;">
+        <img src="./images/WhatsApp.webp" alt="WhatsApp"
+            style="width:56px;border-radius:50%;box-shadow:0 4px 20px rgba(0,0,0,0.2);">
+    </a>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+    <script src="main.js"></script>
+    <script>AOS.init({ duration: 700, once: true });</script>
+</body>
+
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitZone - Premium Luxury Products</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./images/fav-icon.png">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- AOS CDN -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="./index.html"><span style="color:#e94560;">Fit</span>-Zone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./shop.html">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="./features.html">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="./accessories.html">Accessories</a></li>
+          <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex gap-3 align-items-center">
+          <!-- Cart Icon -->
+          <div class="cart-icon-wrap text-white" onclick="toggleCart()">
+            <i class="fas fa-shopping-bag fs-5"></i>
+            <div class="cart-badge" id="cartBadge">0</div>
+          </div>
+          <a href="./login.html" title="Login / Sign Up"
+            style="color:#fff; font-size:1.4rem; line-height:1; transition: color 0.2s;"
+            onmouseover="this.style.color='#e94560'" onmouseout="this.style.color='#fff'">
+            <i class="fas fa-user-circle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════ CART DRAWER ═══ -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h5><i class="fas fa-shopping-bag me-2" style="color:var(--accent);"></i> Your Cart <span id="cartCount"
+          style="color:#999;font-size:0.85rem;font-weight:500;"></span></h5>
+      <button class="cart-close" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="empty-cart" id="emptyCart">
+        <i class="fas fa-shopping-bag"></i>
+        <p>Your cart is empty</p>
+        <a href="./shop.html" class="btn rounded-pill px-4 fw-600"
+          style="background:var(--accent);color:#fff;border:none;" onclick="toggleCart()">Start Shopping</a>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total-row">
+        <span style="color:#777;">Subtotal</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <div class="cart-total-row">
+        <strong>Total</strong>
+        <span id="cartGrandTotal">$0.00</span>
+      </div>
+      <button class="btn-checkout-cart" onclick="window.location.href='./checkout.html'">
+        <i class="fas fa-lock me-2"></i>Proceed to Checkout
+      </button>
+      <a href="./shop.html" class="d-block text-center mt-3 text-muted small" onclick="toggleCart()">Continue Shopping
+        →</a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════ HERO ═══ -->
+  <section class="hero-slider" id="heroSlider">
+
+    <!-- Slide 1 -->
+    <div class="slide active" data-slide="0">
+      <div class="slide-bg">
+        <img src="./images/white-tshirt-img.webp" alt="Hero 1"
+          onerror="this.style.background='linear-gradient(135deg,#1a1a2e,#0f3460)'">
+      </div>
+      <div class="container">
+        <div class="slide-content" data-aos="fade-up">
+          <div class="slide-tag"><i class="fas fa-star me-1"></i> New Arrivals 2025</div>
+          <h1 class="slide-title">Wear Your <em>Story</em></h1>
+          <p class="slide-sub">Premium fashion crafted for those who dare to stand out. Explore our latest collection.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="./shop.html" class="btn btn-hero-primary">Shop Now <i class="fas fa-arrow-right ms-2"></i></a>
+            <a href="./about.html" class="btn btn-hero-outline">Our Story</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide" data-slide="1">
+      <div class="slide-bg">
+        <img src="./images/pents-img.webp" alt="Hero 2"
+          onerror="this.style.background='linear-gradient(135deg,#0f3460,#1a1a2e)'">
+      </div>
+      <div class="container">
+        <div class="slide-content">
+          <div class="slide-tag"><i class="fas fa-fire me-1"></i> Trending Now</div>
+          <h1 class="slide-title">Discover <em>Latest</em><br>Collections</h1>
+          <p class="slide-sub">Trendy styles, smart accessories, and everything in between — curated for you.</p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="./shop.html" class="btn btn-hero-primary">Explore <i class="fas fa-arrow-right ms-2"></i></a>
+            <a href="./features.html" class="btn btn-hero-outline">Why FitZone</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide" data-slide="2">
+      <div class="slide-bg">
+        <img src="./images/Watches-img (1).webp" alt="Hero 3"
+          onerror="this.style.background='linear-gradient(135deg,#16213e,#1a1a2e)'">
+      </div>
+      <div class="container">
+        <div class="slide-content">
+          <div class="slide-tag"><i class="fas fa-shield-alt me-1"></i> Shop with Confidence</div>
+          <h1 class="slide-title">Quality <em>You</em><br>Can Trust</h1>
+          <p class="slide-sub">Free returns, secure checkout, and 24/7 support — every order guaranteed.</p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="./shop.html" class="btn btn-hero-primary">Shop Now <i class="fas fa-arrow-right ms-2"></i></a>
+            <a href="./contact.html" class="btn btn-hero-outline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arrows -->
+    <div class="slider-arrows">
+      <button class="arrow-btn" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+      <button class="arrow-btn" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <!-- Dots -->
+    <div class="slider-nav">
+      <button class="slider-dot active" onclick="goSlide(0)"></button>
+      <button class="slider-dot" onclick="goSlide(1)"></button>
+      <button class="slider-dot" onclick="goSlide(2)"></button>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════ MARQUEE ═══ -->
+  <div class="marquee-strip">
+    <div class="marquee-inner">
+      <span><i class="fas fa-shipping-fast"></i>Free Shipping Over $50</span>
+      <span><i class="fas fa-undo-alt"></i>30-Day Returns</span>
+      <span><i class="fas fa-shield-alt"></i>Secure Checkout</span>
+      <span><i class="fas fa-crown"></i>Loyalty Rewards</span>
+      <span><i class="fas fa-headset"></i>24/7 Support</span>
+      <span><i class="fas fa-leaf"></i>Eco-Friendly Packaging</span>
+      <span><i class="fas fa-shipping-fast"></i>Free Shipping Over $50</span>
+      <span><i class="fas fa-undo-alt"></i>30-Day Returns</span>
+      <span><i class="fas fa-shield-alt"></i>Secure Checkout</span>
+      <span><i class="fas fa-crown"></i>Loyalty Rewards</span>
+      <span><i class="fas fa-headset"></i>24/7 Support</span>
+      <span><i class="fas fa-leaf"></i>Eco-Friendly Packaging</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════ SEASON HIGHLIGHTS ═══ -->
+  <section class="season-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label" data-aos="fade-up">Collections</p>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Season <span
+            style="color:var(--accent);">Highlights</span></h2>
+        <p class="text-muted mt-2" data-aos="fade-up" data-aos-delay="120">Step into style with our latest collections
+        </p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+          <a href="./shop.html" class="season-card d-block">
+            <img src="./images/winter-collec.webp" alt="Winter">
+            <div class="season-card-overlay">
+              <span class="season-tag">❄️ Winter</span>
+              <h5>Winter Collection</h5>
+              <p>Warm layers, cozy styles</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80">
+          <a href="./shop.html" class="season-card d-block">
+            <img src="./images/summer-collec.webp" alt="Summer">
+            <div class="season-card-overlay">
+              <span class="season-tag">☀️ Summer</span>
+              <h5>Summer Vibes</h5>
+              <p>Breezy outfits for sunny days</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160">
+          <a href="./shop.html" class="season-card d-block">
+            <img src="./images/trending-shirts.webp" alt="Trending">
+            <div class="season-card-overlay">
+              <span class="season-tag">🔥 Trending</span>
+              <h5>Trending Now</h5>
+              <p>Fresh looks, just dropped</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240">
+          <a href="./shop.html" class="season-card d-block">
+            <img src="./images/new-arrivals.webp" alt="New Arrivals">
+            <div class="season-card-overlay">
+              <span class="season-tag">✨ New</span>
+              <h5>New Arrivals</h5>
+              <p>Discover the latest additions</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════ PRODUCTS ═══ -->
+  <section class="products-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label" data-aos="fade-up">Hand-Picked For You</p>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">New <span
+            style="color:var(--accent);">Arrivals</span></h2>
+        <p class="text-muted mt-2" data-aos="fade-up" data-aos-delay="120">Discover the latest styles for Men & Women
+        </p>
+      </div>
+
+      <!-- Category pills -->
+      <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap" data-aos="fade-up">
+        <button class="btn rounded-pill px-4 fw-600 btn-sm hp-filter active" data-cat="all"
+          style="background:var(--accent);color:#fff;border:2px solid var(--accent);">All</button>
+        <button class="btn rounded-pill px-4 fw-600 btn-sm hp-filter" data-cat="men"
+          style="background:#fff;color:#555;border:2px solid #e9ecef;">Men</button>
+        <button class="btn rounded-pill px-4 fw-600 btn-sm hp-filter" data-cat="women"
+          style="background:#fff;color:#555;border:2px solid #e9ecef;">Women</button>
+        <button class="btn rounded-pill px-4 fw-600 btn-sm hp-filter" data-cat="shoes"
+          style="background:#fff;color:#555;border:2px solid #e9ecef;">Shoes</button>
+        <button class="btn rounded-pill px-4 fw-600 btn-sm hp-filter" data-cat="watches"
+          style="background:#fff;color:#555;border:2px solid #e9ecef;">Watches</button>
+      </div>
+
+      <div class="row g-4" id="homeProductGrid">
+        <!-- Products injected by JS -->
+      </div>
+
+      <div class="text-center mt-5" data-aos="fade-up">
+        <a href="./shop.html" class="btn rounded-pill px-5 py-3 fw-700"
+          style="background:var(--primary);color:#fff;border:none;font-family:'Poppins',sans-serif;">
+          View All Products <i class="fas fa-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════ PROMO BANNER ═══ -->
+  <section class="promo-section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="promo-card">
+            <img src="./images/men-jacket.webp" alt="Men Collection">
+            <div class="promo-content">
+              <div class="promo-tag">Limited Time</div>
+              <h3>Men's Winter<br>Collection</h3>
+              <div class="countdown" id="countdown1">
+                <div class="cd-box"><span class="cd-num" id="cd1h">12</span><span class="cd-label">Hrs</span></div>
+                <div class="cd-box"><span class="cd-num" id="cd1m">34</span><span class="cd-label">Min</span></div>
+                <div class="cd-box"><span class="cd-num" id="cd1s">00</span><span class="cd-label">Sec</span></div>
+              </div>
+              <a href="./shop.html" class="btn-promo">Shop Men's <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="promo-card">
+            <img src="./images/women-shirt.webp" alt="Women Collection">
+            <div class="promo-content">
+              <div class="promo-tag">New Season</div>
+              <h3>Women's Spring<br>Edit 2025</h3>
+              <p>Fresh cuts, bold prints, and effortless style — drop everything and shop.</p>
+              <a href="./shop.html" class="btn-promo">Shop Women's <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════ NEWSLETTER ═══ -->
+  <section class="newsletter-section">
+    <div class="container text-center">
+      <p class="section-label" data-aos="fade-up" style="color:var(--gold);">Stay Updated</p>
+      <h2 data-aos="fade-up" data-aos-delay="80">Get Exclusive Deals<br>Straight to Your Inbox</h2>
+      <p class="mt-2 mb-4" data-aos="fade-up" data-aos-delay="120">Join 50,000+ subscribers. Unsubscribe anytime.</p>
+      <div class="newsletter-form" data-aos="fade-up" data-aos-delay="160">
+        <input type="email" id="emailInput" placeholder="Enter your email address…">
+        <button class="btn-subscribe" onclick="subscribeEmail()">Subscribe <i
+            class="fas fa-paper-plane ms-1"></i></button>
+      </div>
+      <p class="mt-3 small" style="color:rgba(255,255,255,0.4);" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-lock me-1"></i> We respect your privacy. No spam, ever.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════ TRUST ═══ -->
+  <section class="trust-section">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3" data-aos="fade-up">
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fas fa-shipping-fast"></i></div>
+            <h6>Free Shipping</h6>
+            <p>On orders over $50 worldwide</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="80">
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fas fa-undo-alt"></i></div>
+            <h6>Easy Returns</h6>
+            <p>30-day hassle-free returns</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="160">
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
+            <h6>Secure Payment</h6>
+            <p>256-bit SSL encryption always</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="240">
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fas fa-headset"></i></div>
+            <h6>24/7 Support</h6>
+            <p>Always here when you need us</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════ FOOTER ═══ -->
+  <footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3"><span style="color:#e94560;">Fit</span>-Zone</h5>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;max-width:280px;">Your source for high-quality premium
+            products. Fashion for everyone, everywhere.</p>
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-white-50 fs-5"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white-50 fs-5"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/923302479878" class="text-white-50 fs-5"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="text-white-50 fs-5"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <h6 class="fw-bold mb-3">Shop</h6>
+          <ul class="list-unstyled">
+            <li class="mb-1"><a href="./shop.html" class="text-white-50 text-decoration-none small">All Products</a>
+            </li>
+            <li class="mb-1"><a href="./accessories.html"
+                class="text-white-50 text-decoration-none small">Accessories</a></li>
+            <li class="mb-1"><a href="./features.html" class="text-white-50 text-decoration-none small">Features</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h6 class="fw-bold mb-3">Company</h6>
+          <ul class="list-unstyled">
+            <li class="mb-1"><a href="./about.html" class="text-white-50 text-decoration-none small">About Us</a></li>
+            <li class="mb-1"><a href="./contact.html" class="text-white-50 text-decoration-none small">Contact</a></li>
+            <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none small">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3">Quick Subscribe</h6>
+          <p class="text-white-50 small mb-3">Get deals before they sell out.</p>
+          <div class="d-flex gap-2">
+            <input type="email" class="form-control rounded-pill" placeholder="Your email" style="font-size:0.85rem;">
+            <button class="btn rounded-pill px-3"
+              style="background:var(--accent);color:#fff;border:none;white-space:nowrap;font-weight:600;"><i
+                class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary mt-4">
+      <p class="text-center text-white-50 small mb-0">© 2025 FitZone. All rights reserved. Made with <i
+          class="fas fa-heart" style="color:var(--accent);"></i> in Karachi.</p>
+    </div>
+  </footer>
+
+  <!-- Cart Add Toast -->
+  <div id="addToast"><i class="fas fa-check-circle"></i><span id="addToastMsg">Added to cart!</span></div>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/923302479878" class="position-fixed bottom-0 end-0 m-4" style="z-index:1000;">
+    <img src="./images/WhatsApp.webp" alt="WhatsApp"
+      style="width:56px;border-radius:50%;box-shadow:0 4px 20px rgba(0,0,0,0.2);">
+  </a>
+
+ 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script src="index.js"></script>
+  <script src="main.js"></script>
+  <script>AOS.init({ duration: 700, once: true });</script>
+
+
+</body>
+
+</html>

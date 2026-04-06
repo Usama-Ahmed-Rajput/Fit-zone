@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories | FitZone</title>
+    <link rel="icon" type="image/png" href="./images/fav-icon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/accessories.css">
+</head>
+
+<body>
+
+    <!-- ════════════════════════════════════════ NAVBAR ═══ -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="./index.html"><span style="color:#e94560;">Fit</span>-Zone</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./features.html">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./accessories.html">Accessories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex gap-3 align-items-center">
+                    <!-- Cart Icon -->
+                    <div class="cart-icon-wrap text-white" onclick="toggleCart()">
+                        <i class="fas fa-shopping-bag fs-5"></i>
+                        <div class="cart-badge" id="cartBadge">0</div>
+                    </div>
+                    <a href="./login.html" title="Login / Sign Up"
+                        style="color:#fff; font-size:1.4rem; line-height:1; transition: color 0.2s;"
+                        onmouseover="this.style.color='#e94560'" onmouseout="this.style.color='#fff'">
+                        <i class="fas fa-user-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ════════════════════════════════════════ CART DRAWER ═══ -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <h5><i class="fas fa-shopping-bag me-2" style="color:var(--accent);"></i> Your Cart <span id="cartCount"
+                    style="color:#999;font-size:0.85rem;font-weight:500;"></span></h5>
+            <button class="cart-close" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart" id="emptyCart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <a href="./shop.html" class="btn rounded-pill px-4 fw-600"
+                    style="background:var(--accent);color:#fff;border:none;" onclick="toggleCart()">Start Shopping</a>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total-row">
+                <span style="color:#777;">Subtotal</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <div class="cart-total-row">
+                <strong>Total</strong>
+                <span id="cartGrandTotal">$0.00</span>
+            </div>
+            <button class="btn-checkout-cart" onclick="window.location.href='./checkout.html'">
+                <i class="fas fa-lock me-2"></i>Proceed to Checkout
+            </button>
+            <a href="./shop.html" class="d-block text-center mt-3 text-muted small" onclick="toggleCart()">Continue Shopping
+                →</a>
+        </div>
+    </div>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="acc-hero">
+        <div class="container position-relative" style="z-index:2;">
+            <div class="breadcrumb-acc mb-4" data-aos="fade-up">
+                <a href="./index.html">Home</a>
+                <span>/</span>
+                <span class="current">Accessories</span>
+            </div>
+            <p class="acc-hero-label" data-aos="fade-up"><i class="fas fa-gem me-2"></i>Curated Collection</p>
+            <h1 class="acc-hero-title" data-aos="fade-up" data-aos-delay="80">
+                Premium <em>Accessories</em><br>For Every Style
+            </h1>
+            <p class="acc-hero-sub" data-aos="fade-up" data-aos-delay="140">
+                From statement watches to everyday bags — elevate your look with our handpicked accessories collection.
+            </p>
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+                <div class="hero-stat">
+                    <div class="num">50+</div>
+                    <div class="lbl">Products</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">6</div>
+                    <div class="lbl">Categories</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">4.8★</div>
+                    <div class="lbl">Rating</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">Free</div>
+                    <div class="lbl">Returns</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ MARQUEE ══════════ -->
+    <div class="marquee-strip">
+        <div class="marquee-inner">
+            <span><i class="fas fa-gem"></i>Watches</span>
+            <span><i class="fas fa-shopping-bag"></i>Bags</span>
+            <span><i class="fas fa-glasses"></i>Sunglasses</span>
+            <span><i class="fas fa-hat-cowboy"></i>Caps & Hats</span>
+            <span><i class="fas fa-ring"></i>Jewelry</span>
+            <span><i class="fas fa-shoe-prints"></i>Belts</span>
+            <span><i class="fas fa-gem"></i>Watches</span>
+            <span><i class="fas fa-shopping-bag"></i>Bags</span>
+            <span><i class="fas fa-glasses"></i>Sunglasses</span>
+            <span><i class="fas fa-hat-cowboy"></i>Caps & Hats</span>
+            <span><i class="fas fa-ring"></i>Jewelry</span>
+            <span><i class="fas fa-shoe-prints"></i>Belts</span>
+        </div>
+    </div>
+
+    <!-- ══════════ CATEGORIES ══════════ -->
+    <section class="cat-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label" data-aos="fade-up">Browse By Type</p>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Shop <span
+                        style="color:var(--accent);">Categories</span></h2>
+            </div>
+            <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="0">
+                    <a href="#" class="cat-card" onclick="filterCat('watches'); return false;">
+                        <img src="./images/Watches-img.webp" alt="Watches"
+                            onerror="this.style.background='linear-gradient(135deg,#1a1a2e,#e94560)'">
+                        <div class="cat-card-overlay">
+                            <span class="cat-count">8 items</span>
+                            <h5>Watches</h5>
+                            <p>From $45</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="60">
+                    <a href="#" class="cat-card" onclick="filterCat('bags'); return false;">
+                        <img src="./images/new-arrivals.webp" alt="Bags"
+                            onerror="this.style.background='linear-gradient(135deg,#0f3460,#e94560)'">
+                        <div class="cat-card-overlay">
+                            <span class="cat-count">10 items</span>
+                            <h5>Bags</h5>
+                            <p>From $35</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="120">
+                    <a href="#" class="cat-card" onclick="filterCat('sunglasses'); return false;">
+                        <img src="./images/trending-shirts.webp" alt="Sunglasses"
+                            onerror="this.style.background='linear-gradient(135deg,#16213e,#f5a623)'">
+                        <div class="cat-card-overlay">
+                            <span class="cat-count">6 items</span>
+                            <h5>Sunglasses</h5>
+                            <p>From $25</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="180">
+                    <a href="#" class="cat-card" onclick="filterCat('caps'); return false;">
+                        <img src="./images/winter-collec.webp" alt="Caps"
+                            onerror="this.style.background='linear-gradient(135deg,#1a1a2e,#0f3460)'">
+                        <div class="cat-card-overlay">
+                            <span class="cat-count">7 items</span>
+                            <h5>Caps & Hats</h5>
+                            <p>From $20</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="240">
+                    <a href="#" class="cat-card" onclick="filterCat('jewelry'); return false;">
+                        <img src="./images/summer-collec.webp" alt="Jewelry"
+                            onerror="this.style.background='linear-gradient(135deg,#0f3460,#f5a623)'">
+                        <div class="cat-card-overlay">
+                            <span class="cat-count">9 items</span>
+                            <h5>Jewelry</h5>
+                            <p>From $15</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="300">
+                    <a href="#" class="cat-card" onclick="filterCat('belts'); return false;">
+                        <img src="./images/men-jacket.webp" alt="Belts"
+                            onerror="this.style.background='linear-gradient(135deg,#16213e,#e94560)'">
+                        <div class="cat-card-overlay">
+                            <span class="cat-count">5 items</span>
+                            <h5>Belts</h5>
+                            <p>From $18</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ FILTER BAR ══════════ -->
+    <div class="filter-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <div class="d-flex gap-2 flex-wrap" id="filterPills">
+                    <button class="filter-pill active" data-cat="all" onclick="filterCat('all')">All Items</button>
+                    <button class="filter-pill" data-cat="watches" onclick="filterCat('watches')"><i
+                            class="fas fa-clock me-1"></i>Watches</button>
+                    <button class="filter-pill" data-cat="bags" onclick="filterCat('bags')"><i
+                            class="fas fa-shopping-bag me-1"></i>Bags</button>
+                    <button class="filter-pill" data-cat="sunglasses" onclick="filterCat('sunglasses')"><i
+                            class="fas fa-glasses me-1"></i>Sunglasses</button>
+                    <button class="filter-pill" data-cat="caps" onclick="filterCat('caps')"><i
+                            class="fas fa-hat-cowboy me-1"></i>Caps</button>
+                    <button class="filter-pill" data-cat="jewelry" onclick="filterCat('jewelry')"><i
+                            class="fas fa-ring me-1"></i>Jewelry</button>
+                    <button class="filter-pill" data-cat="belts" onclick="filterCat('belts')"><i
+                            class="fas fa-minus me-1"></i>Belts</button>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <span class="result-count" id="resultCount">Showing all items</span>
+                    <select class="sort-select" onchange="sortProducts(this.value)">
+                        <option value="default">Sort: Featured</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="name">Name: A–Z</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ PRODUCTS GRID ══════════ -->
+    <section class="acc-products">
+        <div class="container">
+            <div class="row g-4" id="accProductGrid"></div>
+            <div class="empty-state hidden" id="emptyState">
+                <i class="fas fa-search"></i>
+                <h5>No products found</h5>
+                <p>Try a different category</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ PROMO ══════════ -->
+    <section class="acc-promo">
+        <div class="container">
+            <div class="promo-inner" data-aos="fade-up">
+                <div>
+                    <p class="section-label" style="color:var(--gold);">Exclusive Offer</p>
+                    <h3>Get 20% Off On<br>Your First Accessory Order</h3>
+                    <p>Use code <strong style="color:var(--gold);">ACCESS20</strong> at checkout. Limited time only.</p>
+                </div>
+                <a href="./shop.html" class="btn-promo-acc">
+                    Shop Now <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ NEWSLETTER ══════════ -->
+    <section class="newsletter-section">
+        <div class="container text-center">
+            <p class="section-label" data-aos="fade-up" style="color:var(--gold);">Stay Updated</p>
+            <h2 data-aos="fade-up" data-aos-delay="80">Never Miss a New Drop</h2>
+            <p class="mt-2 mb-4" data-aos="fade-up" data-aos-delay="120">Join 50,000+ subscribers. Get notified first.
+            </p>
+            <div class="newsletter-form" data-aos="fade-up" data-aos-delay="160">
+                <input type="email" id="emailInput" placeholder="Enter your email address…">
+                <button class="btn-subscribe">Subscribe <i class="fas fa-paper-plane ms-1"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ FOOTER ═══ -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3"><span style="color:#e94560;">Fit</span>-Zone</h5>
+                    <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;max-width:280px;">Your source for
+                        high-quality premium
+                        products. Fashion for everyone, everywhere.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-white-50 fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white-50 fs-5"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/923302479878" class="text-white-50 fs-5"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="text-white-50 fs-5"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Shop</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a href="./shop.html" class="text-white-50 text-decoration-none small">All
+                                Products</a>
+                        </li>
+                        <li class="mb-1"><a href="./accessories.html"
+                                class="text-white-50 text-decoration-none small">Accessories</a></li>
+                        <li class="mb-1"><a href="./features.html"
+                                class="text-white-50 text-decoration-none small">Features</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Company</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a href="./about.html" class="text-white-50 text-decoration-none small">About
+                                Us</a></li>
+                        <li class="mb-1"><a href="./contact.html"
+                                class="text-white-50 text-decoration-none small">Contact</a></li>
+                        <li class="mb-1"><a href="#" class="text-white-50 text-decoration-none small">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold mb-3">Quick Subscribe</h6>
+                    <p class="text-white-50 small mb-3">Get deals before they sell out.</p>
+                    <div class="d-flex gap-2">
+                        <input type="email" class="form-control rounded-pill" placeholder="Your email"
+                            style="font-size:0.85rem;">
+                        <button class="btn rounded-pill px-3"
+                            style="background:var(--accent);color:#fff;border:none;white-space:nowrap;font-weight:600;"><i
+                                class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary mt-4">
+            <p class="text-center text-white-50 small mb-0">© 2025 FitZone. All rights reserved. Made with <i
+                    class="fas fa-heart" style="color:var(--accent);"></i> in Karachi.</p>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div id="addToast"><i class="fas fa-check-circle"></i><span id="addToastMsg">Added to cart!</span></div>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/923302479878" class="position-fixed bottom-0 end-0 m-4" style="z-index:1000;">
+        <img src="./images/WhatsApp.webp" alt="WhatsApp"
+            style="width:56px;border-radius:50%;box-shadow:0 4px 20px rgba(0,0,0,0.2);">
+    </a>
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        AOS.init({ duration: 700, once: true });
+
+        /* ── PRODUCTS DATA ── */
+        const accProducts = [
+            { id: 'acc1', name: 'Royal Chronograph Watch', cat: 'watches', price: 190, old: null, badge: 'hot', img: './images/Watches-img.webp', stars: 5 },
+            { id: 'acc2', name: 'Classic Gold Watch', cat: 'watches', price: 145, old: 180, badge: 'sale', img: './images/Watches-img (1).webp', stars: 4 },
+            { id: 'acc3', name: 'Sport Fitness Watch', cat: 'watches', price: 89, old: null, badge: 'new', img: './images/Watches-img.webp', stars: 4 },
+            { id: 'acc4', name: 'Leather Tote Bag', cat: 'bags', price: 75, old: null, badge: 'new', img: './images/new-arrivals.webp', stars: 5 },
+            { id: 'acc5', name: 'Mini Crossbody Bag', cat: 'bags', price: 55, old: 70, badge: 'sale', img: './images/women-shirt.webp', stars: 4 },
+            { id: 'acc6', name: 'Canvas Backpack', cat: 'bags', price: 65, old: null, badge: 'new', img: './images/new-arrivals.webp', stars: 5 },
+            { id: 'acc7', name: 'Aviator Sunglasses', cat: 'sunglasses', price: 45, old: null, badge: 'hot', img: './images/trending-shirts.webp', stars: 5 },
+            { id: 'acc8', name: 'Cat-Eye Frame Shades', cat: 'sunglasses', price: 35, old: 50, badge: 'sale', img: './images/women-heels.webp', stars: 4 },
+            { id: 'acc9', name: 'Snapback Cap', cat: 'caps', price: 25, old: null, badge: 'new', img: './images/winter-collec.webp', stars: 4 },
+            { id: 'acc10', name: 'Bucket Hat', cat: 'caps', price: 22, old: 30, badge: 'sale', img: './images/summer-collec.webp', stars: 4 },
+            { id: 'acc11', name: 'Gold Chain Necklace', cat: 'jewelry', price: 38, old: null, badge: 'new', img: './images/summer-collec.webp', stars: 5 },
+            { id: 'acc12', name: 'Crystal Stud Earrings', cat: 'jewelry', price: 22, old: null, badge: 'new', img: './images/women-shirt.webp', stars: 4 },
+            { id: 'acc13', name: 'Braided Leather Belt', cat: 'belts', price: 28, old: null, badge: 'new', img: './images/men-jacket.webp', stars: 5 },
+            { id: 'acc14', name: 'Canvas Web Belt', cat: 'belts', price: 18, old: 24, badge: 'sale', img: './images/shirts-img.webp', stars: 4 },
+            { id: 'acc15', name: 'Diamond-cut Bracelet', cat: 'jewelry', price: 55, old: null, badge: 'hot', img: './images/Watches-img.webp', stars: 5 },
+            { id: 'acc16', name: 'Weekender Duffel Bag', cat: 'bags', price: 95, old: 120, badge: 'sale', img: './images/new-arrivals.webp', stars: 5 },
+        ];
+
+        let currentCat = 'all';
+        let currentSort = 'default';
+
+        function filterCat(cat) {
+            currentCat = cat;
+            // Update pills
+            document.querySelectorAll('.filter-pill').forEach(p => {
+                p.classList.toggle('active', p.dataset.cat === cat);
+            });
+            renderProducts();
+        }
+
+        function sortProducts(val) {
+            currentSort = val;
+            renderProducts();
+        }
+
+        function renderProducts() {
+            let list = currentCat === 'all' ? [...accProducts] : accProducts.filter(p => p.cat === currentCat);
+            if (currentSort === 'price-asc') list.sort((a, b) => a.price - b.price);
+            if (currentSort === 'price-desc') list.sort((a, b) => b.price - a.price);
+            if (currentSort === 'name') list.sort((a, b) => a.name.localeCompare(b.name));
+
+            const grid = document.getElementById('accProductGrid');
+            const empty = document.getElementById('emptyState');
+
+            if (!list.length) {
+                grid.innerHTML = '';
+                empty.classList.remove('hidden');
+                document.getElementById('resultCount').textContent = '0 results';
+                return;
+            }
+            empty.classList.add('hidden');
+            document.getElementById('resultCount').textContent = `Showing ${list.length} item${list.length !== 1 ? 's' : ''}`;
+
+            const starsHTML = n => [...Array(5)].map((_, i) =>
+                `<i class="fas fa-star" style="color:${i < n ? 'var(--gold)' : '#ddd'}"></i>`).join('');
+
+            grid.innerHTML = list.map((p, i) => `
+    <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="${(i % 4) * 60}">
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="${p.img}" alt="${p.name}" loading="lazy"
+               onerror="this.style.background='linear-gradient(135deg,#1a1a2e,#0f3460)';this.style.height='220px'">
+          ${p.badge ? `<span class="product-badge badge-${p.badge}">${p.badge.toUpperCase()}</span>` : ''}
+          <button class="p-wishlist"><i class="fas fa-heart"></i></button>
+          <button class="p-add" onclick="window.addToCart('${p.id}', '${p.name.replace(/'/g, "\\'")}', ${p.price}, '${p.img}')">
+            <i class="fas fa-shopping-bag me-2"></i>Add to Cart
+          </button>
+        </div>
+        <div class="p-info">
+          <div class="p-cat">${p.cat}</div>
+          <div class="p-name">${p.name}</div>
+          <div class="p-price-row">
+            <span class="p-price">$${p.price.toFixed(2)}</span>
+            ${p.old ? `<span class="p-old-price">$${p.old.toFixed(2)}</span>` : ''}
+          </div>
+          <div class="p-stars">${starsHTML(p.stars)}</div>
+        </div>
+      </div>
+    </div>`).join('');
+            AOS.refreshHard();
+        }
+
+        renderProducts();
+    </script>
+</body>
+
+</html>
